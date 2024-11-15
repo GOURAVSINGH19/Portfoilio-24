@@ -69,7 +69,7 @@ const Footer = () => {
   return (
     <footer
       ref={ref}
-      className="w-full h-screen text-[#1c1c1c]  relative flex justify-center items-center "
+      className="w-full h-[100svh] text-[#1c1c1c]  relative flex justify-center items-center "
     >
       <div className="w-[100%] h-[100%] absolute z-2 bottom-0 left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]">
         <Blob />
