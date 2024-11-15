@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ */
+:root {
+  --text: #f0dba5;
+  --bg: #151515;
+  --yellow: #edb74d;
+  --green: #6fb18a;
+}
+
+@font-face {
+  font-family: bb;
+  src: url(/brice/Brice/Brice-Bold.otf);
+}
+
+@font-face {
+  font-family: light;
+  src: url(/maghfirea/Maghfirea.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+html {
+  height: 100svh;
+}
+
+body:after,
+body:before {
+  font-family: light;
+  position: fixed;
+  left: 0;
+  top: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: 3023023023020;
+  pointer-events: none;
+  opacity: 20%;
+  color: #151515;
+}
+
+body:before {
+  filter: url(#grainy);
+}
+
+/* home */
+
+.svg-2 {
+  clip-path: polygon(
+    calc(100% - 2rem) 0,
+    100% 2rem,
+    100% calc(100% - 3rem),
+    calc(100% - 7rem) calc(100% - 3rem),
+    calc(100% - 9rem) 100%,
+    2rem 100%,
+    0 calc(100% - 2rem),
+    0 3rem,
+    10rem 3rem,
+    12rem 0
+  );
+}
+
+.roundButton {
+  border-radius: 3em;
+  border: 1px solid rgb(136, 136, 136);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 60px 15px 60px;
+}
+
+h2 {
+  position: relative;
+  z-index: 1;
+  transition: color 2s linear;
+}
+
+.circle {
+  width: 100%;
+  height: 150%;
+  position: absolute;
+  border-radius: 50%;
+  top: 100%;
+}
+
+.slider {
+  position: relative;
+  white-space: nowrap;
+}
+
+.slider p {
+  position: relative;
+  margin: 0px;
+  color: white;
+  font-weight: 500;
+  padding-right: 50px;
+}
+
+.slider p:nth-of-type(2) {
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+
+/* paragraph */
+.paragraph {
+  display: flex;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.word {
+  position: relative;
+  margin-top: 12px;
+}
+.shadow {
+  position: absolute;
+  opacity: 20%;
+}
+
+/* .card-1 {
+  clip-path: polygon(
+    0 10%,
+    10% 0,
+    80% 0,
+    90% 10%,
+    90% 30%,
+    100% 40%,
+    100% 90%,
+    90% 100%,
+    40% 100%,
+    30% 90%,
+    10% 90%,
+    0 80%
+  );
+}
+
+.card-2 {
+  clip-path: polygon(
+    0 10%,
+    10% 0,
+    80% 0,
+    90% 10%,
+    90% 30%,
+    100% 40%,
+    100% 90%,
+    90% 100%,
+    40% 100%,
+    30% 90%,
+    10% 90%,
+    0 80%
+  );
+}
+.card-3 {
+  clip-path: polygon(
+    0 10%,
+    10% 0,
+    80% 0,
+    90% 10%,
+    90% 30%,
+    100% 40%,
+    100% 90%,
+    90% 100%,
+    40% 100%,
+    30% 90%,
+    10% 90%,
+    0 80%
+  );
+}
+
+
+/* project-section */
+
+.footer {
+  padding: 1.5rem 1.5rem;
+}
+
+/* Optional: Add this if you want to customize the transition timing */
+.back-top_arrow {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
