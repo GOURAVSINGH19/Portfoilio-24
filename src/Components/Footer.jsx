@@ -101,7 +101,7 @@ const Footer = () => {
               </span>
             </div>
           </div>
-          <div className="w-full h-[25rem] md:h-[41rem] flex flex-col justify-center items-center">
+          <div className="w-full h-[25rem] md:h-[70svh] flex flex-col justify-center items-center">
             <div className=" w-full flex flex-col justify-center items-center">
               <div className="flex overflow-hidden">
                 {"INTERESTED IN".split("").map((char, index) => (
