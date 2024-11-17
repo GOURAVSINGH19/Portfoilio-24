@@ -6,12 +6,18 @@ import Menubtn from "../Components/Btn/Menubtn";
 // import svg from "../../assets/arrow.svg";
 import Downarrow from "../assets/Downarrow.svg";
 import Avatar from "./Me/Canvas";
+import NavPage from "./NavPage";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-  const [play, setplay] = useState(true);
+  const [Navpage, setNavpage] = useState(false);
   const containerref = useRef(null);
+
+  const handleNavpage = () => {
+    setNavpage(!Navpage);
+  };
+
   useEffect(() => {
     let tl = gsap.timeline();
     tl.from(".clip-bg", {
@@ -72,23 +78,25 @@ const Home = () => {
         },
         "a"
       );
-    
   }, [containerref]);
+
   return (
     <div ref={containerref} className="h-screen w-full  text-white  relative">
-      <div className="w-full h-full  overflow-hidden relative">
-        <div className="w-full m-auto h-16 left-5 sm:left-10  top-2 lg:top-2 absolute z-[9]">
-          <div
-            onClick={(e) => setplay(!e)}
-            class="lg:w-24 lg:h-12 w-[6rem] h-10 cursor-pointer nav opacity-0 relative flex gap-4 md:gap-5 items-center"
-          >
+      <div className="w-full h-full overflow-hidden relative">
+        <div className="w-full m-auto h-16 left-5 sm:left-10  top-2 lg:top-2 absolute z-[800]">
+          <div class="lg:w-24 lg:h-12 w-[6rem] h-10 cursor-pointer nav opacity-0 relative flex gap-4 md:gap-5 items-center">
             <h1 className="text-[2rem] md:text-[1.5rem]">work</h1>
             <span className="w-2 h-2 bg-[--green] rounded-full mt-2"></span>
           </div>
-          <div className="fixed w-full">
+          <div className="fixed w-full " onClick={handleNavpage}>
             <Menubtn />
           </div>
         </div>
+        {Navpage && (
+          <div className="w-screen h-screen fixed top-0 left-0 bg-purple-200 z-[30]">
+            <NavPage />
+          </div>
+        )}
         <div className="w-full h-full relative  overflow-hidden">
           <div className="w-full h-full relative overflow-hidden p-[1rem]">
             <div className="h-full svg-2 bg-[#3f3a3f2f] clip-bg relative">
@@ -112,7 +120,7 @@ const Home = () => {
         </div>
         <div className="w-full h-full flex justify-center items-center   lg:w-full lg:h-full  pointer-events-auto absolute top-0   clip avatar">
           <div className="h-[40rem] w-[40rem] lg:w-full model lg:h-full opacity-0">
-            <Avatar />
+            {/* <Avatar /> */}
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <>
       <div className="main" ref={target}>
-        <div className="header md:hidden absolute top-5 right-20 px-5 z-10 scale-0">
+        <div className="header md:hidden absolute top-0 right-20 px-5 z-[50] scale-0">
           <Magnetic>
             <div
               onClick={() => {
@@ -48,7 +48,7 @@ export default function Home() {
           </Magnetic>
         </div>
       </div>
-      <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
+      <AnimatePresence mode="wait">{isActive}</AnimatePresence>
     </>
   );
 }

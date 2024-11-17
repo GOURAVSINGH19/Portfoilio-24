@@ -49,13 +49,13 @@ export default function Middletext() {
           ref={firstText}
           className="text-[100px] sm:text-[180px] md:text-[350px]"
         >
-          Gourav Singh -
+          Frontend Developer -
         </p>
         <p
           ref={secondText}
           className="text-[100px] sm:text-[180px] lg:text-[350px]"
         >
-          Gourav Singh -
+          Frontend Developer -
         </p>
       </div>
     </div>
