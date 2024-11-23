@@ -88,12 +88,12 @@ const Home = () => {
             <h1 className="text-[2rem] md:text-[1.5rem]">work</h1>
             <span className="w-2 h-2 bg-[--green] rounded-full mt-2"></span>
           </div>
-          <div className="fixed w-full " onClick={handleNavpage}>
+          <div className="fixed w-full" onClick={handleNavpage}>
             <Menubtn />
           </div>
         </div>
         {Navpage && (
-          <div className="w-screen h-screen fixed top-0 left-0 bg-purple-200 z-[30]">
+          <div className="w-screen h-screen fixed top-0 left-0 z-[30] duration-700 ease-in-out">
             <NavPage />
           </div>
         )}

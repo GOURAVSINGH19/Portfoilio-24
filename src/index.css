@@ -44,6 +44,11 @@ body:before {
   pointer-events: none;
   opacity: 20%;
   color: #151515;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 body:before {

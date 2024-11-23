@@ -33,13 +33,13 @@ export default function Home() {
   return (
     <>
       <div className="main" ref={target}>
-        <div className="header md:hidden absolute top-0 right-20 px-5 z-[50] scale-0">
+        <div className="header md:hidden absolute top-0 right-10 md:right-20 px-5 z-[50] scale-0">
           <Magnetic>
             <div
               onClick={() => {
                 setIsActive(!isActive);
               }}
-              className="button1 bg-[#455be9b8] duration-700 ease-in-out  hover:bg-[#455ce9] w-[5vw] h-[5vw]"
+              className="button1 bg-[#455be9b8] duration-700 ease-in-out  hover:bg-[#455ce9] w-[4rem] h-[4rem] md:w-[5vw] md:h-[5vw]"
             >
               <div
                 className={`${"burger"} ${isActive ? "burgerActive" : ""}`}

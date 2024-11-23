@@ -133,16 +133,16 @@ export default function Section() {
       className="projects relative w-screen"
     >
       <div className="w-full h-fit  p-[.5rem] mb-[10rem] overflow-hidden">
-        <h1 className="text-[#383838] ml-5  text-[10vw] heading translate-y-full ">
+        <h1 className="text-[#383838] ml-5  heading ">
           {text.split("").map((char, index) => (
             <motion.span
-              className="hover:text-[--yellow] cursor-default"
+              className="hover:text-[--yellow] text-[5rem] md:text-[7rem] lg:text-[10rem] cursor-default"
               key={index}
             >
               {char}
             </motion.span>
           ))}
-          <sup className="text-white">3</sup>
+          <sup className="text-white text-[7vw]">3</sup>
         </h1>
       </div>
       <div className="body">

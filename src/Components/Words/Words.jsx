@@ -33,7 +33,7 @@ const Word = ({ children, progress, range }) => {
   const opacity = useTransform(progress, range, [0, 1]);
   return (
     <>
-      <div class="text-[1.5rem] md:text-[3rem] md:tracking-widest ">
+      <div class="text-[1.5rem] md:text-[3rem] tracking-widest md:tracking-widest ">
         <h1 class="shadow m-2">{children}</h1>
         <motion.h1 class=" leading-normal  m-2" style={{ opacity: opacity }}>
           {children}

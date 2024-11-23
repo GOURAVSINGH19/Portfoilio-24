@@ -47,7 +47,7 @@ export default function Middletext() {
       <div ref={slider} className="slider flex whitespace-nowrap w-full">
         <p
           ref={firstText}
-          className="text-[100px] sm:text-[180px] md:text-[350px]"
+          className="text-[100px] sm:text-[180px] lg:text-[350px]"
         >
           Frontend Developer -
         </p>

@@ -81,7 +81,7 @@ const Footer = () => {
               <h1 className="text-[1.3rem] md:text-[1.5rem]">
                 Designer and Web Developer
               </h1>
-              <span className="text-zinc-900">Portfolio 2024 - 2025</span>
+              <span className="text-zinc-900 text-[1rem] md:text-[1.2rem]">Portfolio 2024 - 2025</span>
             </div>
 
             <div className="w-full md:w-1/3 md:flex md:justify-center hidden ">
@@ -90,24 +90,24 @@ const Footer = () => {
               </h1>
             </div>
             <div className="w-full md:w-1/3 flex flex-col md:justify-end items-center md:items-end">
-              <h1 className="text-[1.2rem]  relative  pointer-events-auto">
+              <h1 className="text-[1rem] md:text-[1.5rem] relative  pointer-events-auto">
                 <span className="relative inline-block ">
                   Design by Gourav Singh
                   <div className="w-full h-[1px] bg-zinc-400 line"></div>
                 </span>
               </h1>
-              <span className="text-sm text-gray-500">
+              <span className=" text-gray-500 text-[1rem] md:text-[1.2rem]">
                 @2024 - All Rights Reserved
               </span>
             </div>
           </div>
-          <div className="w-full h-[25rem] md:h-[70svh] flex flex-col justify-center items-center">
-            <div className=" w-full flex flex-col justify-center items-center">
+          <div className="w-full h-[25rem] sm:h-[30rem] md:h-[67svh] lg:h-[68svh] flex flex-col justify-center items-center">
+            <div className=" w-full flex flex-col justify-center items-center text-white">
               <div className="flex overflow-hidden">
                 {"INTERESTED IN".split("").map((char, index) => (
                   <h1
                     key={index}
-                    className="] opacity-0 capitalize translate-y-full text-[2.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[10rem] clip-animate-text"
+                    className="] opacity-0 capitalize translate-y-full text-[2.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8rem] clip-animate-text"
                   >
                     {char === " " ? "\u00A0" : char}
                   </h1>
@@ -117,7 +117,7 @@ const Footer = () => {
                 {"WORKING TOGETHER".split("").map((char, index) => (
                   <h1
                     key={index}
-                    className="] opacity-0 translate-y-full capitalize text-[2rem] md:text-[7vw] lg:text-[10rem] clip-animate-text2"
+                    className="] opacity-0 translate-y-full capitalize text-[2rem] md:text-[7vw] lg:text-[8rem] clip-animate-text2"
                   >
                     {char === " " ? "\u00A0" : char}
                   </h1>
@@ -146,7 +146,7 @@ const Footer = () => {
             <div className="w-fit flex flex-col  items-center  arrow pointer-events-auto mt-10">
               <div className="flex justify-center md:justify-end items-center gap-5 w-full mr-4">
                 <div className="flex items-center gap-2 group">
-                  <h1 className="text-[1.5rem] ] capitalize cursor-pointer">
+                  <h1 onClick={clickhandle} className="text-[1.5rem] ] capitalize cursor-pointer">
                     back to top
                   </h1>
                   <span className="overflow-hidden w-[.6rem] h-[.6rem] relative">
