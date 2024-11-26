@@ -13,7 +13,7 @@ const Mycanvas = () => {
         }}
         gl={{ alpha: true }}
       >
-        <Suspense fallback="loding...">
+        <Suspense>
           <Experience />
         </Suspense>
       </Canvas>

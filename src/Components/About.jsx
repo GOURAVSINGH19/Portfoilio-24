@@ -36,12 +36,13 @@ const About = () => {
           <h1 className="text-[2rem] w-fit h-fit  text-zinc-300  md:text-zinc-700 hover:text-zinc-300 duration-300 ease-linear md:mb-10">
             About
           </h1>
-          <div className="w-[10rem] h-[10rem] md:w-[15vw] md:h-[15vw]">
+          <h1 className="text-zinc-300 text-[1vw]">New Delhi , India</h1>
+          <div className="w-[10rem] h-[10rem] md:w-[20vw] md:h-[20vw] absolute top-[10rem] left-0">
             <Earth />
           </div>
         </div>
         <div className="w-full md:w-2/3 flex justify-start items-center flex-col mt-10">
-          <div className="w-full overflow-hidden">
+          <div className="w-full overflow-hidden text">
             <Paragraph>
               I'm a frontend developer with a passion for 3D animation and
               designing immersive 3D websites. I love bringing ideas to life

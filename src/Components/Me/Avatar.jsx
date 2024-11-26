@@ -6,8 +6,8 @@ Command: npx gltfjsx@6.2.18 public/models/6668aed11b19a1354031074a.glb
 import React, { useEffect, useRef } from "react";
 import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
 
-export default function Model() {
-  // const { animation } = props;
+export default function Model({ ...props }) {
+  const { animation } = props;
   const { nodes, materials, error } = useGLTF("/Avatar.glb");
 
   if (error) {
@@ -15,27 +15,29 @@ export default function Model() {
     return null;
   }
 
-  // ...
-
+  const { animations: typingAnimation } = useFBX("animation/Texting.fbx");
   const { animations: HipHop } = useFBX("animation/HipHop.fbx");
-  //   const { animations: Texting } = useFBX("animation/Texting.fbx");
 
   HipHop[0].name = "HipHop";
-  //   Texting[0].name = "Texting";
+  typingAnimation[0].name = "Texting";
 
   const groupRef = useRef();
-  const { actions } = useAnimations(HipHop, groupRef);
+  const { actions } = useAnimations([typingAnimation[0], HipHop[0]], groupRef);
 
   useEffect(() => {
-    actions["HipHop"].reset().play();
-    return () => {
-      actions["HipHop"].reset().stop();
-    };
-  }, []);
+    if (actions[animation]) {
+      actions[animation].reset().fadeIn(1).play();
+      return () => {
+        actions[animation].reset().fadeOut(0.5);
+      };
+    } else {
+      console.warn(`Animation "${animation}" not found in actions.`);
+    }
+  }, [animation,actions]);
 
   return (
-    <group ref={groupRef}>
-      <group dispose={null} rotation={[-Math.PI / 2, 0, 0]}>
+    <group ref={groupRef} {...props}>
+      <group rotation={[-Math.PI / 2, 0, 0]} dispose={null}>
         <primitive object={nodes.Hips} />
         <skinnedMesh
           geometry={nodes.Wolf3D_Hair.geometry}

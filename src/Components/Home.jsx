@@ -2,21 +2,27 @@ import React, { useEffect, useRef, useState } from "react";
 import Middletext from "../Animation/Middletext";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Menubtn from "../Components/Btn/Menubtn";
-// import svg from "../../assets/arrow.svg";
 import Downarrow from "../assets/Downarrow.svg";
 import Avatar from "./Me/Canvas";
-import NavPage from "./NavPage";
-
+import Ani from "../assets/Ani.json";
+import Lottie from "lottie-react";
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-  const [Navpage, setNavpage] = useState(false);
   const containerref = useRef(null);
 
-  const handleNavpage = () => {
-    setNavpage(!Navpage);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const [currentAnimation, setCurrentAnimation] = useState("Texting"); // Start with texting animation
+
+  const toggleAudioIndicator = () => {
+    setIsAudioPlaying((prev) => !prev);
+    if (!isAudioPlaying) {
+      setCurrentAnimation("HipHop"); // Switch to dancing animation when audio starts
+    } else {
+      setCurrentAnimation("Texting"); // Optionally switch back to texting when audio stops
+    }
   };
+  const audioElementRef = useRef(null);
 
   useEffect(() => {
     let tl = gsap.timeline();
@@ -80,23 +86,33 @@ const Home = () => {
       );
   }, [containerref]);
 
+  useEffect(() => {
+    if (isAudioPlaying) {
+      audioElementRef.current.play();
+    } else {
+      audioElementRef.current.pause();
+    }
+  }, [isAudioPlaying]);
+
   return (
     <div ref={containerref} className="h-screen w-full  text-white  relative">
       <div className="w-full h-full overflow-hidden relative">
         <div className="w-full m-auto h-16 left-5 sm:left-10  top-2 lg:top-2 absolute z-[800]">
           <div class="lg:w-24 lg:h-12 w-[6rem] h-10 cursor-pointer nav opacity-0 relative flex gap-4 md:gap-5 items-center">
-            <h1 className="text-[2rem] md:text-[1.5rem]">work</h1>
-            <span className="w-2 h-2 bg-[--green] rounded-full mt-2"></span>
-          </div>
-          <div className="fixed w-full" onClick={handleNavpage}>
-            <Menubtn />
+            <button
+              onClick={toggleAudioIndicator}
+              className=" w-42 h-10 flex items-center"
+            >
+              <audio
+                ref={audioElementRef}
+                className="hidden"
+                src="/loop.mp3"
+                loop
+              />
+              <Lottie animationData={Ani} loop={true} />
+            </button>
           </div>
         </div>
-        {Navpage && (
-          <div className="w-screen h-screen fixed top-0 left-0 z-[30] duration-700 ease-in-out">
-            <NavPage />
-          </div>
-        )}
         <div className="w-full h-full relative  overflow-hidden">
           <div className="w-full h-full relative overflow-hidden p-[1rem]">
             <div className="h-full svg-2 bg-[#3f3a3f2f] clip-bg relative">
@@ -120,7 +136,7 @@ const Home = () => {
         </div>
         <div className="w-full h-full flex justify-center items-center   lg:w-full lg:h-full  pointer-events-auto absolute top-0   clip avatar">
           <div className="h-[40rem] w-[40rem] lg:w-full model lg:h-full opacity-0">
-            {/* <Avatar /> */}
+            <Avatar  />
           </div>
         </div>
       </div>
