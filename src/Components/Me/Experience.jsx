@@ -4,15 +4,15 @@ import { useControls } from "leva";
 const Experience = () => {
   const { animation } = useControls({
     animation: {
-      options: ["idel", "HipHop", "Texting"],
-      default: "Idel",
+      options: ["Texting","Idle","HipHop"],
+      default: "Idle",
     },
   });
   return (
     <>
       <OrbitControls
         enablePan={false}
-        enableZoom={false}
+        enableZoom={true}
         enableRotate={false}
       />
       <Environment preset="sunset" />
