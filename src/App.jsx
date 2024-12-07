@@ -3,6 +3,7 @@ import { AnimatePresence } from "framer-motion";
 import Preload from "./Components/Preloader/Preloader";
 import Lenis from "lenis";
 import Pages from "./Components/Pages";
+import { Leva } from "leva";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,6 +36,7 @@ const App = () => {
       </svg>
       <AnimatePresence mode="wait">{isLoading && <Preload />}</AnimatePresence>
       <Pages />
+      <Leva hidden />
     </div>
   );
 };

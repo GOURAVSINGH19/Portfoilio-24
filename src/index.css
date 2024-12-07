@@ -28,8 +28,9 @@
   text-rendering: optimizeLegibility;
 }
 html {
-  height: 100svh;
+  height: 100vh;
 }
+
 
 body:after,
 body:before {

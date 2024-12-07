@@ -1,18 +1,18 @@
-import { Environment, OrbitControls } from "@react-three/drei";
+import { Environment, Float, OrbitControls } from "@react-three/drei";
 import Avatar from "./Avatar";
 import { useControls } from "leva";
+import { useFrame } from "@react-three/fiber";
 const Experience = () => {
   const { animation } = useControls({
     animation: {
-      options: ["Texting","Idle","HipHop"],
-      default: "Idle",
+      options: ["Texting"],
     },
   });
   return (
     <>
       <OrbitControls
         enablePan={false}
-        enableZoom={true}
+        enableZoom={false}
         enableRotate={false}
       />
       <Environment preset="sunset" />

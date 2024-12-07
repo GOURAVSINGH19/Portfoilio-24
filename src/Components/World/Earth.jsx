@@ -15,15 +15,17 @@ export default function Earth() {
   const [color, normal, aoMap] = useLoader(TextureLoader, [
     "/img/earth-2.jpg",
     "/img/noise.png",
-    // '/img/occlusion.jpg',
-    // '/img/earth/earth-1.jpg',
-    // '/img/earth/earth-2.jpg',
     "/img/earth-3.jpg",
   ]);
 
   return (
     <Canvas ref={scene}>
-      <OrbitControls enableZoom={false} enableDamping={false} enableRotate={false} maxPolarAngle={1}/>
+      <OrbitControls
+        enableZoom={false}
+        enableDamping={false}
+        enableRotate={false}
+        maxPolarAngle={1}
+      />
       <ambientLight intensity={4} />
       <directionalLight intensity={0.5} position={[0, 0, -2]} />
       <motion.mesh
@@ -33,7 +35,7 @@ export default function Earth() {
       >
         <sphereGeometry args={[1, 54, 54]} />
         <meshStandardMaterial map={color} normalMap={normal} aoMap={aoMap} />
-        <Sparkles scale={200} size={30} speed={2} />
+        <Sparkles scale={200} size={80} speed={1} color={"white"} />
       </motion.mesh>
     </Canvas>
   );

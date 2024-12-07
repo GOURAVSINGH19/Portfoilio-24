@@ -16,39 +16,32 @@ export default function Model({ ...props }) {
   }
 
   const { animations: typingAnimation } = useFBX("animation/Texting.fbx");
-  const { animations: HipHop } = useFBX("animation/HipHop.fbx");
-  const { animations: Idle } = useFBX("animation/Idle.fbx");
+  // const { animations: HipHop } = useFBX("animation/HipHop.fbx");
+  // const { animations: Idle } = useFBX("animation/Idle.fbx");
 
-  HipHop[0].name = "HipHop";
+  // HipHop[0].name = "HipHop";
   typingAnimation[0].name = "Texting";
-  Idle[0].name = "Idle";
+  // Idle[0].name = "Idle";
 
   const groupRef = useRef();
-  const { actions } = useAnimations(
-    [typingAnimation[0], HipHop[0], Idle[0]],
-    groupRef
-  );
+  const { actions } = useAnimations([typingAnimation[0]], groupRef);
 
   useEffect(() => {
-    console.log("Attempting to play animation:", animation);
-    if (actions[animation]) {
-      console.log("Playing animation:", animation);
-      actions[animation].reset().fadeIn(1).play();
+    if (actions["Texting"]) {
+      actions["Texting"].reset().fadeIn(1).play();
       return () => {
-        actions[animation].reset().fadeOut(0.5);
+        actions["Texting"].reset().fadeOut(0.5);
       };
     } else {
       console.error(
-        `Animation "${animation}" not found. Available animations:`,
-        Object.keys(actions)
+        `Animation "${animation}" not found. Available animations:`
       );
     }
-  }, [animation, actions, groupRef]);
-
+  }, [actions]);
 
   return (
-    <group ref={groupRef} {...props} rotation={[-Math.PI / 2, 0, 0]}>
-      <group dispose={null}>
+    <group ref={groupRef} {...props}>
+      <group dispose={null} rotation={[-Math.PI / 2, 0, 0]}>
         <primitive object={nodes.Hips} />
         <skinnedMesh
           geometry={nodes.Wolf3D_Hair.geometry}

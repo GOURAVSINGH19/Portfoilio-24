@@ -1,4 +1,4 @@
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import Experience from "./Experience";
 import { Suspense } from "react";
 
@@ -6,7 +6,8 @@ const Mycanvas = () => {
   return (
     <>
       <Canvas
-        camera={{ position: [0, 2, 5], fov: 28 }}
+        shadows
+        camera={{ position: [0, 2, 5], fov: 30 }}
         resize={false}
         onScroll={() => {
           resize = false;
@@ -22,3 +23,5 @@ const Mycanvas = () => {
 };
 
 export default Mycanvas;
+
+

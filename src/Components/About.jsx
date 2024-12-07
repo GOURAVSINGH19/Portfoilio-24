@@ -32,14 +32,13 @@ const About = () => {
   return (
     <div ref={textRef} className=" min-h-[50rem] relative  p-[1.5rem]">
       <div className="flex justify-center  md:p-[1.5rem] flex-col md:flex-row w-full mb-20">
-        <div className="md:w-1/3 flex md:flex-col md:justify-start justify-between w-full">
-          <h1 className="text-[2rem] w-fit h-fit  text-zinc-300  md:text-zinc-700 hover:text-zinc-300 duration-300 ease-linear md:mb-10">
+        <div className="md:w-1/3 flex flex-col md:justify-start justify-between w-full items-center md:items-start">
+          <h1 className="text-[2rem] w-full h-fit  md:w-fit text-zinc-300  md:text-zinc-700 hover:text-zinc-300 duration-300 ease-linear md:mb-10">
             About
           </h1>
-          <h1 className="text-zinc-300 text-[1vw]">New Delhi , India</h1>
-          <div className="w-[10rem] h-[10rem] md:w-[20vw] md:h-[20vw] absolute top-[10rem] left-0">
-            <Earth />
-          </div>
+          <h1 className="text-zinc-300 w-full md:w-fit text-[1rem] md:text-[1vw] mt-3">
+            New Delhi , India
+          </h1>
         </div>
         <div className="w-full md:w-2/3 flex justify-start items-center flex-col mt-10">
           <div className="w-full overflow-hidden text">

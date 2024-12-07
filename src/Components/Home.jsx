@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useMemo, useRef, useState } from "react";
 import Middletext from "../Animation/Middletext";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,20 +8,17 @@ import Ani from "../assets/Ani.json";
 import Lottie from "lottie-react";
 gsap.registerPlugin(ScrollTrigger);
 
+const MemoizedAvatar = memo(Avatar);
+
 const Home = () => {
   const containerref = useRef(null);
 
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [currentAnimation, setCurrentAnimation] = useState("Texting"); // Start with texting animation
 
   const toggleAudioIndicator = () => {
     setIsAudioPlaying((prev) => !prev);
-    if (!isAudioPlaying) {
-      setCurrentAnimation("HipHop"); // Switch to dancing animation when audio starts
-    } else {
-      setCurrentAnimation("Texting"); // Optionally switch back to texting when audio stops
-    }
   };
+
   const audioElementRef = useRef(null);
 
   useEffect(() => {
@@ -98,18 +95,18 @@ const Home = () => {
     <div ref={containerref} className="h-screen w-full  text-white  relative">
       <div className="w-full h-full overflow-hidden relative">
         <div className="w-full m-auto h-16 left-5 sm:left-10  top-2 lg:top-2 absolute z-[800]">
-          <div class="lg:w-24 lg:h-12 w-[6rem] h-10 cursor-pointer nav opacity-0 relative flex gap-4 md:gap-5 items-center">
+          <div class="lg:w-24 lg:h-12 w-[6rem] h-10 cursor-pointer nav opacity-0 relative flex gap-4 md:gap-5 items-center overflow-hidden">
             <button
               onClick={toggleAudioIndicator}
-              className=" w-42 h-10 flex items-center"
+              className=" w-42 h-10 flex items-center border-none"
             >
               <audio
                 ref={audioElementRef}
-                className="hidden"
+                className="hidden border-none"
                 src="/loop.mp3"
                 loop
               />
-              <Lottie animationData={Ani} loop={true} />
+              <Lottie animationData={Ani} loop={true} className="border-none" />
             </button>
           </div>
         </div>
@@ -136,7 +133,12 @@ const Home = () => {
         </div>
         <div className="w-full h-full flex justify-center items-center   lg:w-full lg:h-full  pointer-events-auto absolute top-0   clip avatar">
           <div className="h-[40rem] w-[40rem] lg:w-full model lg:h-full opacity-0">
-            <Avatar  />
+            <MemoizedAvatar />
+            {/* <iframe
+              src="https://app.endlesstools.io/embed/f3dabc65-825a-4a4a-9ff3-984bef067906"
+              frameborder="0"
+              className="w-full h-full"
+            ></iframe> */}
           </div>
         </div>
       </div>

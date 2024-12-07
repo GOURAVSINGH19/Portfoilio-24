@@ -69,9 +69,9 @@ const Footer = () => {
   return (
     <footer
       ref={ref}
-      className="w-full h-[100svh] text-[#1c1c1c]  relative flex justify-center items-center "
+      className="w-full h-[100svh] text-white  relative flex justify-center items-center "
     >
-      <div className="w-[100%] h-[100%] absolute z-2 bottom-0 left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]">
+      <div className="w-[100vw] h-[50vh] md:h-[100vh] absolute z-2 bottom-0 left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]">
         <Blob />
       </div>
       <div className="w-full h-full absolute z-5 pb-[3rem] md:pl-[3rem] md:pr-[3rem] pt-[3rem] flex justify-center items-center pointer-events-none">
@@ -81,13 +81,9 @@ const Footer = () => {
               <h1 className="text-[1.3rem] md:text-[1.5rem]">
                 Designer and Web Developer
               </h1>
-              <span className="text-zinc-900 text-[1rem] md:text-[1.2rem]">Portfolio 2024 - 2025</span>
-            </div>
-
-            <div className="w-full md:w-1/3 md:flex md:justify-center hidden ">
-              <h1 className="text-[1rem]  gs-text-animate scale-[.3rem]   duration-300 ease-linear ">
-                GS
-              </h1>
+              <span className="text-zinc-900 text-[1rem] md:text-[1.2rem]">
+                Portfolio 2024 - 2025
+              </span>
             </div>
             <div className="w-full md:w-1/3 flex flex-col md:justify-end items-center md:items-end">
               <h1 className="text-[1rem] md:text-[1.5rem] relative  pointer-events-auto">
@@ -101,8 +97,8 @@ const Footer = () => {
               </span>
             </div>
           </div>
-          <div className="w-full h-[25rem] sm:h-[30rem] md:h-[67svh] lg:h-[68svh] flex flex-col justify-center items-center">
-            <div className=" w-full flex flex-col justify-center items-center text-white">
+          <div className="w-full  h-[35rem] sm:h-[38rem]  md:h-[63svh]  lg:h-[68svh] flex flex-col justify-center items-center">
+            <div className=" w-full   flex flex-col justify-center items-center text-white">
               <div className="flex overflow-hidden">
                 {"INTERESTED IN".split("").map((char, index) => (
                   <h1
@@ -126,7 +122,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="w-full h-fit  flex justify-between items-center md:p-[1rem] relative flex-col md:flex-row ">
-            <div className="relative flex items-center justify-center gap-10 pointer-events-auto text-[#000] ml-2 ">
+            <div className="relative flex items-center justify-center gap-10 pointer-events-auto  ml-2 ">
               <Magnetic>
                 <a href="/">
                   <h2 className="relative text-[1.3rem] ">Linkedin</h2>
@@ -146,7 +142,10 @@ const Footer = () => {
             <div className="w-fit flex flex-col  items-center  arrow pointer-events-auto mt-10">
               <div className="flex justify-center md:justify-end items-center gap-5 w-full mr-4">
                 <div className="flex items-center gap-2 group">
-                  <h1 onClick={clickhandle} className="text-[1.5rem] ] capitalize cursor-pointer">
+                  <h1
+                    onClick={clickhandle}
+                    className="text-[1.5rem] ] capitalize cursor-pointer"
+                  >
                     back to top
                   </h1>
                   <span className="overflow-hidden w-[.6rem] h-[.6rem] relative">
@@ -180,7 +179,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-full bg-[#b6b6b2] animate-bg "></div>
+      <div className="w-full h-full bg-[#2f6063] animate-bg "></div>
     </footer>
   );
 };
